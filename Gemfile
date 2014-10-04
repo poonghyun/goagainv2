@@ -18,3 +18,9 @@ group :development do
   gem 'pry-rails'
   gem 'quiet_assets'
 end
+
+gem 'figaro'
+gem 'bcrypt'
+gem 'backbone-on-rails'
+gem 'newrelic_rpm'
+gem 'filepicker-rails'
