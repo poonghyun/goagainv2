@@ -2,6 +2,7 @@ GoAgainV2.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "splash",
 		"cat/:category": "categoryShow",
+		"business/new": "businessNew",
 		"business/:id": "businessShow",
 		"user/:id": "userShow"
 	},
