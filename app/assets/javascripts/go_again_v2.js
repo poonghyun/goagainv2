@@ -6,7 +6,7 @@ window.GoAgainV2 = {
   initialize: function() {
   	var $main = $('#main');
 
-  	new GoAgain.Routers.Router({
+  	new GoAgainV2.Routers.Router({
   		$rootEl: $main
   	});
   	
