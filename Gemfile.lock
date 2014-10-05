@@ -46,6 +46,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-material-design (0.0.0)
+    bootstrap-sass (3.1.1.1)
+      sass (~> 3.2)
     builder (3.1.4)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -68,6 +71,8 @@ GEM
       thor (~> 0.14)
     filepicker-rails (1.2.0)
       rails (>= 3.2)
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (1.5.3)
@@ -76,6 +81,9 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.1)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -154,11 +162,15 @@ DEPENDENCIES
   bcrypt
   better_errors
   binding_of_caller
+  bootstrap-material-design
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   figaro
   filepicker-rails
+  font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   newrelic_rpm
   pg
   pry-rails

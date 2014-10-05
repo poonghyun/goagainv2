@@ -1,0 +1,59 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@import "bootstrap";
+@import "font-awesome";
+
+ul {
+	list-style: none;
+}
+
+/* sign in pages */
+
+.image-background-container {
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right: 0;
+
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.sign-in {
+	background: url("/assets/sushi.jpg") no-repeat center center fixed;
+}
+
+.sign-up {
+	background: url("/assets/coffee.jpg") no-repeat center center fixed;
+}
+
+.inner-form-container {
+	width: 350px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color:rgba(0,0,0,0.8);
+	border-radius: 3%;
+	text-align: center;
+	padding: 10px;
+	color: white;
+}
+
+.guest-login {
+	border-top: thin solid white;
+	margin-top: 8px;
+	padding-top: 5px;
+}

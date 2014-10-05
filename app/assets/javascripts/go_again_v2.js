@@ -4,7 +4,13 @@ window.GoAgainV2 = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+  	var $main = $('#main');
+
+  	new GoAgain.Routers.Router({
+  		$rootEl: $main
+  	});
+  	
+  	Backbone.history.start();
   }
 };
 

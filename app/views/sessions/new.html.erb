@@ -1,0 +1,42 @@
+<div class="image-background-container sign-in">
+	<div class="inner-form-container">
+		<h1>Sign In</h1>
+
+		<% if flash[:errors] %>
+			<div class="alert alert-danger alert-dismissible" role="alert">
+			   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			<%= flash[:errors].join("<br>").html_safe %>
+			</div>
+		<% end %>
+
+		<form action="/session" method="post" role="form">
+		  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		  
+		  <div class="form-group">
+			  <label for="username">Username</label>
+			  <input id="username" class="form-control" name="user[username]" type="text">
+		  </div>
+
+		  <div class="form-group">
+			  <label for="password">Password</label>
+			  <input id="password" class="form-control" name="user[password]" type="password">
+			 </div>
+
+		  <input type="submit" value="Submit" class="btn btn-success">
+		</form>
+
+		<form class="guest-login" action="/session" method="post" role="form">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+			<input type="hidden" name="user[username]" value="Guest">
+			<input type="hidden" name="user[password]" value="welcome">
+
+			<input type="submit" value="Guest Login" class="btn btn-warning">
+			<p>(Employers enter here)</p>
+		</form>
+
+		<div class="sign-up-link">
+			<a href="/users/new">Want an account?</a>
+		</div>
+	</div>
+</div>

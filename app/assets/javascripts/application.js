@@ -12,11 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.serializejson
 //= require underscore
 //= require backbone
+//= require bootstrap
+//= require backbone.bootstrap-modal
+//= require typeahead.bundle
+//= require handlebars-1.0.rc.1.min
 //= require go_again_v2
 //= require_tree ../templates
+//= require_tree ./utils
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
