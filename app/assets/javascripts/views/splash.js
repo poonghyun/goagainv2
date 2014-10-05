@@ -53,7 +53,7 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 
 	      _(data).each(function(review){
 	      	var reviewModel = new GoAgainV2.Models.Review(review);
-	      	view.collection.add(reviewModel);
+	      	view.recentReviews.add(reviewModel);
 	      });
 	    }
 	  };
