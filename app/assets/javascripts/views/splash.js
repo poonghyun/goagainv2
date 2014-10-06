@@ -36,7 +36,8 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		"click .get-more-reviews": "getMoreReviews"
+		"click .get-more-reviews": "getMoreReviews",
+		"click .category-link": "getCategory"
 	},
 
 	getMoreReviews: function(event) {
@@ -65,5 +66,21 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 	  $.ajax(options);
 	},
 
-	count: 1
+	count: 1,
+
+	getCategory: function(event) {
+		event.preventDefault();
+
+		var category = $(event.currentTarget).attr('href');
+
+		var categoryBusinesses = new GoAgainV2.Collections.Businesses();
+
+		categoryBusinesses.fetch({data: { category: category }});
+
+		var view = new GoAgainV2.Views.CategoryShow({
+			collection: categoryBusinesses
+		});
+
+		$('.category-results').html(view.render().$el);
+	}
 });

@@ -17,6 +17,25 @@ GoAgainV2.Collections.Businesses = Backbone.Collection.extend({
 		}
 
 		return business;
+	},
+
+	getActive: function() {
+		this._active = this._active || new GoAgainV2.Models.Business();
+		return this._active;
+	},
+
+	parse: function(response) {
+		if(response.closest) {
+			this.getActive().set(response.closest)
+
+			if(response.closest.photos) {
+				this.getActive().photos().set(response.closest.photos);
+			}
+
+			delete response.closest;
+		}
+
+		return response.others || response;
 	}
 });
 

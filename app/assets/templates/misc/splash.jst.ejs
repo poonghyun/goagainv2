@@ -8,7 +8,7 @@
   <div class="category-nav">
     <% categories.forEach(function(category) { %>
       <div class="category-link-container">
-        <a href="#/cat/<%= category.replace(/ /g,'') %>"><%= category %></a>
+        <a class="category-link" href="<%= category.replace(/ /g,'') %>"><%= category %></a>
       </div>
     <% }); %>
   </div>

@@ -98,6 +98,10 @@ ul {
 	margin-right: 15px;
 }
 
+.category-link {
+	
+}
+
 .category-results {
 
 }
@@ -127,18 +131,6 @@ ul {
 }
 
 /* typeahead search */
-
-#typeahead {
-
-}
-
-div.empty-search-result {
-
-}
-
-div.business-search-result {
-	
-}
 
 .tt-hint {
     display: block;
@@ -210,10 +202,50 @@ div.business-search-result {
 
 }
 
+.user-profile-area {
+
+}
+
+.user-avatar-container {
+
+}
+
+.about-me-container {
+
+}
+
+.edit-about-me-link {
+
+}
+
+.new-about-me-link {
+
+}
+
+.user-stats-container {
+	
+}
+
 .review-user-list {
 
 }
 
 .review-user {
 	
+}
+
+/* explore */
+
+.explore-container {
+
+}
+
+#map {
+	height: 500px;
+	width: 500px;
+}
+
+.map-business-preview {
+	height: 100px;
+	width: 200px;
 }

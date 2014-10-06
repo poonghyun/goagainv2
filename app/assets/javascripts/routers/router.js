@@ -1,10 +1,10 @@
 GoAgainV2.Routers.Router = Backbone.Router.extend({
 	routes: {
 		"": "splash",
-		"cat/:category": "categoryShow",
 		"business/new": "businessNew",
 		"business/:id": "businessShow",
-		"user/:id": "userShow"
+		"user/:id": "userShow",
+		"explore": "explore"
 	},
 
 	initialize: function(options) {
@@ -21,18 +21,6 @@ GoAgainV2.Routers.Router = Backbone.Router.extend({
 		GoAgainV2.reviews.fetch();
 
 		this._swapView(view);
-	},
-
-	categoryShow: function(category) {
-		var categoryBusinesses = new GoAgainV2.Collections.Businesses();
-
-		categoryBusinesses.fetch({data: { category: category }});
-
-		var view = new GoAgainV2.Views.CategoryShow({
-			collection: categoryBusinesses
-		});
-
-		$('.category-results').html(view.render().$el);
 	},
 
 	businessNew: function() {
@@ -59,6 +47,17 @@ GoAgainV2.Routers.Router = Backbone.Router.extend({
 		});
 
 		user.fetch();
+
+		this._swapView(view);
+	},
+
+	explore: function() {
+		var view = new GoAgainV2.Views.MapView({
+			collection: GoAgainV2.businesses,
+			model: GoAgainV2.businesses.getActive()
+		});
+
+		GoAgainV2.businesses.fetch();
 
 		this._swapView(view);
 	},

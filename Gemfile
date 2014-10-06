@@ -15,6 +15,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'debugger'
   gem 'pry-rails'
   gem 'quiet_assets'
 end

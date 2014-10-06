@@ -1,4 +1,41 @@
 <div class="user-show-container">
+	<div class="user-profile-area">
+		<h2><%= user.get('username') %></h2>
+
+		<div class="user-avatar-container">
+			<% if(user.get('avatar_url')) { %>
+				<img src="<%= user.get('avatar_url') %>">
+				<% if(user.id === user.get('current_user_id')) { %>
+					<a href="#">Upload a new profile picture</a>
+				<% } %>
+			<% } else { %>
+				<img src="/assets/default-avatar.jpg">
+				<% if(user.id === user.get('current_user_id')) { %>
+					<a href="#">Upload a profile picture</a>
+				<% } %>
+			<% } %>
+		</div>
+
+		<div class="about-me-container">
+			<h4>About Me</h4>
+			<% if(user.get('about_me')) { %>
+				<a href="#" class="edit-about-me-link">Edit</a>
+				<p><%= user.get('about_me') %></p>
+			<% } else { %>
+				<% if(user.id === user.get('current_user_id')) { %>
+					<a href="#" class="new-about-me-link">Make!</a>
+				<% } else { %>
+					<p>Nothing yet!</p>
+				<% } %>
+			<% } %>
+		</div>
+
+		<div class="user-stats-container">
+			<p>Member since <%= user.get('created_at') %></p>
+			<p>Written <%= user.get('num_reviews') %> reviews</p>
+		</div>
+
+	</div>
 	<div class="review-user-list">
 	</div>
 </div>
