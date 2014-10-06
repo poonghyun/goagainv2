@@ -30,7 +30,7 @@ module Api
           category = split_on_caps(category)
         end
 
-        @businesses = Business.where(b_type: category)
+        @businesses = Business.where(category: category)
         render :index
 
       else #normal request

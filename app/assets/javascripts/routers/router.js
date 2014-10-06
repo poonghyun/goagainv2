@@ -24,6 +24,21 @@ GoAgainV2.Routers.Router = Backbone.Router.extend({
 	},
 
 	categoryShow: function(category) {
+		var categoryBusinesses = new GoAgainV2.Collections.Businesses();
+
+		categoryBusinesses.fetch({data: { category: category }});
+
+		var view = new GoAgainV2.Views.CategoryShow({
+			collection: categoryBusinesses
+		});
+
+		$('.category-results').html(view.render().$el);
+	},
+
+	businessNew: function() {
+		var view = new GoAgainV2.Views.BusinessNew();
+
+		this._swapView(view);
 	},
 
 	businessShow: function(id) {

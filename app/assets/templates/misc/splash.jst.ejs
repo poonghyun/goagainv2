@@ -1,5 +1,5 @@
 <div class="jumbotron splash-header">
-  <input type="text" id="typeahead" placeholder="Find a business">
+  <h1>Find what you're looking for</h1>
 </div>
 
 <div class="categories">
@@ -7,7 +7,9 @@
 
   <div class="category-nav">
     <% categories.forEach(function(category) { %>
-
+      <div class="category-link-container">
+        <a href="#/cat/<%= category.replace(/ /g,'') %>"><%= category %></a>
+      </div>
     <% }); %>
   </div>
 

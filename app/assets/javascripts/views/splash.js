@@ -26,7 +26,11 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 		this.attachSubviews();
 
-		$('#typeahead').businessSearch();
+		var allBusinessesView = new GoAgainV2.Views.CategoryShow({
+			collection: this.businesses
+		});
+
+		$('.category-results').html(allBusinessesView.render().$el);
 
 		return this;
 	},

@@ -16,6 +16,8 @@
 //= require underscore
 //= require backbone
 //= require bootstrap
+//= require material
+//= require ripples
 //= require backbone.bootstrap-modal
 //= require typeahead.bundle
 //= require handlebars-1.0.rc.1.min
@@ -27,3 +29,7 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(function() {
+	$('#typeahead').businessSearch();
+})
