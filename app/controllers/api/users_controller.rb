@@ -8,7 +8,7 @@ module Api
 		def update
 			@user = User.find(params[:id])
 			@user.update(about_me: params[:about_me]) if params[:about_me]
-      @user.update(fp_url: params[:fp_url]) if params[:fp_url]
+      @user.update(avatar_url: params[:avatar_url]) if params[:avatar_url]
 			render :update
 		end
   end

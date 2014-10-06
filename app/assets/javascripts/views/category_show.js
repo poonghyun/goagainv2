@@ -15,6 +15,7 @@ GoAgainV2.Views.CategoryShow = Backbone.View.extend({
 		var view = this;
 		setTimeout(function() {
 			view.$('.category-thumbnail').css("opacity", "1");
+			$('.rateit').rateit();
 		}, 0);
 
 		return this;

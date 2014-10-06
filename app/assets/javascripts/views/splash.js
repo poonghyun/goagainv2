@@ -31,6 +31,7 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 		});
 
 		$('.category-results').html(allBusinessesView.render().$el);
+		$('.rateit').rateit();
 
 		return this;
 	},

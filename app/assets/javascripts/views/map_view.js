@@ -1,6 +1,15 @@
 GoAgainV2.Views.MapView = Backbone.View.extend({
 	template: JST['business/map_view'],
 
+	events: {
+		"click .map-help button": "helpPopover"
+	},
+
+	helpPopover: function (event) {
+		event.preventDefault();
+		$(event.currentTarget).popover();
+	},
+
 	initialize: function() {
 		var mView = this;
 		this.listenTo(this.collection, "sync", _.debounce(mView.addAndBind, 100));

@@ -28,5 +28,42 @@ GoAgainV2.Views.UserShow = Backbone.CompositeView.extend({
 		this.attachSubviews();
 
 		return this;
+	},
+
+	events: {
+		"click .new-about-me-link": "newAboutMe",
+		"click .edit-about-me-link": "editAboutMe",
+		"click .user-avatar-container a": "uploadAvatar"
+	},
+
+	newAboutMe: function(event) {
+		event.preventDefault();
+
+		var formView = new GoAgainV2.Views.AboutMe({
+			model: this.model
+		});
+
+		$('.new-about-me-link').replaceWith(formView.render().$el);
+	},
+
+	uploadAvatar: function(event) {
+		event.preventDefault();
+
+		var model = this.model;
+
+		filepicker.setKey("AcXki9SpLRNG0P2Y00ihoz");
+
+		filepicker.pick(
+		  {
+		    mimetypes: ['image/*', 'text/plain'],
+		    container: 'window',
+		    services:['COMPUTER', 'FACEBOOK', 'GMAIL'],
+		  },
+		  function(Blob){
+		  	model.set({ avatar_url: Blob.url });
+		  	model.save();
+		  }
+		);
 	}
+
 });

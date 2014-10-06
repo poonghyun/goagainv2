@@ -1,5 +1,25 @@
 <% businesses.each(function(business) { %>
-	<div class="category-thumbnail" style="opacity:0">
-		<p><%= business.get('name') %></p>
+	<div class="category-thumbnail col-xs-3" style="opacity:0">
+		<a href="#/business/<%= business.id %>"><span class="link-span"></span></a>
+
+		<% if(business.get('avatar_url')) { %>
+			<img src="<%= business.get('avatar_url') %>">
+		<% } else { %>
+			<img src="/assets/building-avatar.gif">
+		<% } %>
+
+		<h4><%= business.get('name') %></h4>
+
+		<div class="category-review-section">
+			<div class="rateit" data-rateit-value="<%= business.get('average_review') %>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+			<div class="category-num-reviews"><%= business.get('num_reviews') %> reviews</div>
+		</div>
+
+		<% var price = "" %>
+		<% for(var i = 0; i < business.get('price'); i++) { %>
+			<% price += "$" %>
+		<% } %>
+		<p><%= price %>  -  <%= business.get('category') %></p>
+
 	</div>
 <% }) %>

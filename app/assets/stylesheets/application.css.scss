@@ -12,12 +12,22 @@
  *= require_tree .
  *= require material
  *= require ripples
+ *= require rateit
  */
 @import "bootstrap";
 @import "font-awesome";
 
 ul {
 	list-style: none;
+}
+
+.link-span {
+	position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
 }
 
 /* sign in pages */
@@ -86,6 +96,8 @@ ul {
 
 .categories {
 	border: thin solid black;
+	width: 95%;
+	margin: 0 auto;
 }
 
 .category-nav {
@@ -103,15 +115,47 @@ ul {
 }
 
 .category-results {
-
+	width: 100%;
+	margin: 0 auto;
 }
 
 .category-thumbnail {
-	height: 100px;
-	width: 100px;
-	display: inline-block;
+	height: 320px;
+	width: 250px;
+	margin: 10px;
 	transition: opacity 2s;
-	background-color: red;
+	border: thin solid lightgray;
+	position: relative;
+}
+
+.category-thumbnail img {
+	width: 248px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+}
+
+.category-thumbnail h4 {
+	margin-top: 210px;
+	text-align: center;
+}
+
+.category-review-section {
+	display: inline-block;
+	margin-left: 35px;
+}
+
+.category-thumbnail .rateit {
+	display: inline;
+}
+
+.category-thumbnail .category-num-reviews {
+	display: inline;
+}
+
+.category-thumbnail p {
+	text-align: center;
+	margin-top: 5px;
 }
 
 .recent-reviews {
@@ -199,19 +243,38 @@ ul {
 /* user show */
 
 .user-show-container {
-
+	width: 95%;
+	margin: 0 auto;
+	min-width: 700px;
 }
 
 .user-profile-area {
+	border: thin solid black;
+}
 
+.user-profile-area h2 {
+	text-align: center
 }
 
 .user-avatar-container {
+	border-bottom: thin solid lightgray;
+	padding-bottom: 10px;
+}
 
+.user-avatar-container img {
+	width: 80%;
+	margin: 0 auto;
+	display: block;
+}
+
+.user-avatar-container a {
+	display: block;
+	text-align: center;
 }
 
 .about-me-container {
-
+	border-bottom: thin solid lightgray;
+	padding-bottom: 10px;
 }
 
 .edit-about-me-link {
@@ -223,7 +286,7 @@ ul {
 }
 
 .user-stats-container {
-	
+	padding-top: 10px;
 }
 
 .review-user-list {
@@ -237,15 +300,31 @@ ul {
 /* explore */
 
 .explore-container {
+	width: 90%;
+	margin-top: 30px;
+	margin-right: 5%;
+	margin-left: 5%;
+	min-width: 700px;
+	height: 600px;
+	border: thin solid black;
+	position: relative;
+}
 
+.map-help {
+	position: absolute;
+	top: 435px;
+	left: 15px;
 }
 
 #map {
 	height: 500px;
-	width: 500px;
+	width: 63%;
+	float: left;
 }
 
 .map-business-preview {
-	height: 100px;
-	width: 200px;
+	height: 500px;
+	width: 35%;
+	float: right;
+	border: thin solid black;
 }

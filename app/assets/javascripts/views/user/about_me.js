@@ -27,11 +27,16 @@ GoAgainV2.Views.AboutMe = Backbone.View.extend({
 			},
 			{
 				success: function (user) {
-					// append the about me with edit button, and remove
+					var $editLink = $('<a href="#" class="edit-about-me-link">Edit</a>');
+					var $aboutMe = $('<p>').text(user.attributes.about_me);
+					$('.about-me-container').append($editLink);
+					$('.about-me-container').append($aboutMe);
+					
+					view.remove();
 				}
 			})
 		} else {
-			// signify error
+			this.$('.form-group').addClass('has-error');
 		}
 	}
 });
