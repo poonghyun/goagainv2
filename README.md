@@ -1,9 +1,20 @@
+user reviews
+user photo gallery
+
 business show
-user show
+
 review creation
 photos
+
+map business preview
+
+seeds
+
+---
+
 business creation
-reincarnate maps
-likes
-partial stars
+
+recent reviews photos
+scrollable infinite recent reviews with animation
+
 icon for categories links when selected

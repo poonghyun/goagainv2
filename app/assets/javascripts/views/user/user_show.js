@@ -46,6 +46,18 @@ GoAgainV2.Views.UserShow = Backbone.CompositeView.extend({
 		$('.new-about-me-link').replaceWith(formView.render().$el);
 	},
 
+	editAboutMe: function(event) {
+		event.preventDefault();
+
+		$('.about-me-field').remove();
+
+		var formView = new GoAgainV2.Views.AboutMeEdit({
+			model: this.model
+		});
+
+		$('.edit-about-me-link').replaceWith(formView.render().$el);
+	},
+
 	uploadAvatar: function(event) {
 		event.preventDefault();
 

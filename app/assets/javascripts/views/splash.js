@@ -61,6 +61,8 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 	      	var reviewModel = new GoAgainV2.Models.Review(review);
 	      	view.recentReviews.add(reviewModel);
 	      });
+
+	      $('.rateit').rateit();
 	    }
 	  };
 
@@ -71,6 +73,9 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 
 	getCategory: function(event) {
 		event.preventDefault();
+
+		$('.category-link').css("font-weight", "normal");
+		$(event.currentTarget).css("font-weight", "bold");
 
 		var category = $(event.currentTarget).attr('href');
 

@@ -1,3 +1,12 @@
 <div class="splash-review">
-	<%= review.get('content') %>
+	<h5><a href="#/user/<%= review.get('user')['id'] %>"><%= review.get('user')['username'] %></a> wrote a review for <a href="#/business/<%= review.get('business').id %>"><%= review.get('business')['name'] %></a></h5>
+
+	<div class="splash-review-star-date">
+		<div class="rateit" data-rateit-value="<%= review.get('stars') %>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+		<div class="splash-review-date"><%= (new Date(review.get('updated_at'))).toDateString() %></div>
+	</div>
+
+	<p class="splash-review-content">"<%= review.get('content') %>"</p>
+
+	<p class="splash-review-go-again">Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
 </div>

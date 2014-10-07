@@ -159,7 +159,8 @@ ul {
 }
 
 .recent-reviews {
-
+	width: 550px;
+	margin: 0 auto;
 }
 
 .recent-review-list {
@@ -167,7 +168,38 @@ ul {
 }
 
 .splash-review {
-	
+	margin-top: 10px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-top: thin solid lightgray;
+}
+
+.splash-review h5 {
+	text-align: center;
+}
+
+.splash-review-star-date {
+	display: inline-block;
+	margin-left: 150px;
+}
+
+.splash-review-star-date .rateit {
+	display: inline;
+}
+
+.splash-review-star-date .splash-review-date {
+	display: inline;
+}
+
+.splash-review-content {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.splash-review-go-again {
+	text-align: center;
 }
 
 .get-more-reviews {
@@ -283,6 +315,10 @@ ul {
 
 .new-about-me-link {
 
+}
+
+.about-me-field {
+	
 }
 
 .user-stats-container {

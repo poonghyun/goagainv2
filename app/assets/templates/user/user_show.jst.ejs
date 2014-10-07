@@ -20,7 +20,7 @@
 			<h4>About Me</h4>
 			<% if(user.get('about_me')) { %>
 				<a href="#" class="edit-about-me-link">Edit</a>
-				<p><%= user.get('about_me') %></p>
+				<p class='about-me-field'><%= user.get('about_me') %></p>
 			<% } else { %>
 				<% if(user.id === user.get('current_user_id')) { %>
 					<a href="#" class="new-about-me-link">Make!</a>
@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="user-stats-container">
-			<p>Member since <%= user.get('created_at') %></p>
+			<p>Member since <%= (new Date(user.get('created_at'))).toDateString() %></p>
 			<p>Written <%= user.get('num_reviews') %> reviews</p>
 		</div>
 

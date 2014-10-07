@@ -1,8 +1,10 @@
-GoAgainV2.Views.AboutMe = Backbone.View.extend({
-	template: JST['user/about_me'],
+GoAgainV2.Views.AboutMeEdit = Backbone.View.extend({
+	template: JST['user/about_me_edit'],
 
 	render: function () {
-		var renderedContent = this.template();
+		var renderedContent = this.template({
+			user: this.model
+		});
 
 		this.$el.html(renderedContent);
 
@@ -29,6 +31,7 @@ GoAgainV2.Views.AboutMe = Backbone.View.extend({
 				success: function (user) {
 					var $editLink = $('<a href="#" class="edit-about-me-link">Edit</a>');
 					var $aboutMe = $('<p class="about-me-field">').text(user.attributes.about_me);
+
 					$('.about-me-container').append($editLink);
 					$('.about-me-container').append($aboutMe);
 					
