@@ -7,6 +7,7 @@ json.array! @businesses do |business|
   json.price business.price
   json.x_coord business.x_coord
   json.y_coord business.y_coord
+  json.avatar_url business.avatar_url
   json.average_review business.average_review
   json.num_reviews business.reviews.count
 

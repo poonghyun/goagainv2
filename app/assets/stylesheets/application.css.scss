@@ -13,6 +13,7 @@
  *= require material
  *= require ripples
  *= require rateit
+ *= require bootstrap-lightbox
  */
 @import "bootstrap";
 @import "font-awesome";
@@ -202,6 +203,19 @@ ul {
 	text-align: center;
 }
 
+.splash-review-thumbnails {
+	
+}
+
+.splash-review-thumbnails .splash-thumbnail-link {
+	height: 130px;
+}
+
+.splash-review-thumbnails .splash-thumbnail-link img {
+	height: 98%;
+	width: 98%;
+}
+
 .get-more-reviews {
 
 }
@@ -258,6 +272,20 @@ ul {
 
 .business-show-container {
 
+}
+
+.business-stats {
+
+}
+
+#business-photos-carousel {
+	height: 300px;
+	width: 400px;
+}
+
+.carousel-photo {
+	height: 300px !important;
+	width: 400px !important;
 }
 
 .review-business-list {

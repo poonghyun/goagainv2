@@ -1,8 +1,42 @@
 <div class="business-show-container">
 	<h2><%= business.get('name') %></h2>
 
-	<p><%= business.get('num_reviews') %></p>
-	<p><%= business.get('average_review') %></p>
+	<div class="business-stats">
+
+	</div>
+
+	<div id="business-photos-carousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+	    <% business.photos().each(function(photo, index) { %>
+	    	<% if(index === 0) { %>
+	    		<li data-target="#business-photos-carousel" data-slide-to="0" class="active"></li>
+		    <% } else { %>
+		    	<li data-target="#business-photos-carousel" data-slide-to="<%= index %>"></li>
+		  	<% } %>
+	    <% }) %>
+	  </ol>
+
+	  <div class="carousel-inner">
+	    <% business.photos().each(function(photo, index) { %>
+		  	<% if(index === 0) { %>
+	    		<div class="item active">
+	      		<img class="carousel-photo" src="<%= photo.get('fp_url') %>">
+	    		</div>
+	    	<% } else { %>
+			    <div class="item">
+			      <img class="carousel-photo" src="<%= photo.get('fp_url') %>">
+			    </div>
+			  <% } %>
+		  <% }) %>
+	  </div>
+
+	  <a class="left carousel-control" href="#business-photos-carousel" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="#business-photos-carousel" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
 
 	<div class="review-business-list">
 	</div>

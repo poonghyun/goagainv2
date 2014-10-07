@@ -1,4 +1,4 @@
-json.(@business, :id, :name, :category, :created_at, :updated_at, :price, :x_coord, :y_coord)
+json.(@business, :id, :name, :category, :created_at, :updated_at, :price, :x_coord, :y_coord, :avatar_url)
 json.average_review @business.average_review
 json.num_reviews @business.reviews.count
 

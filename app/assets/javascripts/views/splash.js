@@ -38,7 +38,8 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 
 	events: {
 		"click .get-more-reviews": "getMoreReviews",
-		"click .category-link": "getCategory"
+		"click .category-link": "getCategory",
+		"click .splash-thumbnail-link": "lightbox"
 	},
 
 	getMoreReviews: function(event) {
@@ -59,6 +60,7 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 
 	      _(data).each(function(review){
 	      	var reviewModel = new GoAgainV2.Models.Review(review);
+	      	reviewModel.fetch();
 	      	view.recentReviews.add(reviewModel);
 	      });
 
@@ -88,5 +90,12 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 		});
 
 		$('.category-results').html(view.render().$el);
+	},
+
+	lightbox: function(event) {
+		event.preventDefault();
+
+		var photoId = $(event.currentTarget).attr('href');
+		$(photoId).lightbox();
 	}
 });

@@ -9,4 +9,23 @@
 	<p class="splash-review-content">"<%= review.get('content') %>"</p>
 
 	<p class="splash-review-go-again">Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
+
+	<div class="splash-review-thumbnails row">
+		<% review.photos().each(function(photo) { %>
+			<div class="col-xs-4">
+				<a href="#photo<%= photo.id %>" class="thumbnail splash-thumbnail-link">
+					<img src="<%= photo.get('fp_url') %>">
+				</a>
+			</div>
+		<% }) %>
+	</div>
+
+	<% review.photos().each(function(photo) { %>
+		<div id="photo<%= photo.id %>" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+			<div class='lightbox-content'>
+				<img src="<%= photo.get('fp_url') %>">
+			</div>
+		</div>
+	<% }) %>
+	
 </div>

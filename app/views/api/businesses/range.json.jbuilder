@@ -1,6 +1,6 @@
 if @closest
 	json.closest do
-		json.extract!(@closest, :id, :name, :category, :created_at, :updated_at, :price, :x_coord, :y_coord)
+		json.extract!(@closest, :id, :name, :category, :created_at, :updated_at, :price, :x_coord, :y_coord, :avatar_url)
 		json.average_review @closest.average_review
 		json.num_reviews @closest.reviews.count
 		json.photos @closest.photos do |photo|
