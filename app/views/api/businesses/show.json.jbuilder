@@ -5,6 +5,7 @@ json.num_reviews @business.reviews.count
 json.reviews @business.reviews do |review|
 	json.extract! review, :id, :business_id, :content, :stars, :created_at, :updated_at, :go_again
 	json.user review.user
+	json.current_user_id current_user.id
 
 	json.photos review.photos do |photo|
 		json.extract! photo, :id, :created_at, :fp_url, :caption

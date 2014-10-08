@@ -271,21 +271,61 @@ ul {
 /* business show */
 
 .business-show-container {
+	padding-top: 30px;
+	width: 95%;
+	min-width: 1000px;
+	margin: 0 auto;
+}
 
+.business-left {
+}
+
+.static-map {
+	padding-top: 10px;
+	border-top: thin solid lightgray;
+}
+
+.static-map img {
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+	border: thin solid gray;
 }
 
 .business-stats {
+	max-width: 100%;
+}
 
+.business-star-review-section {
+	display: inline-block;
+	margin-left: 32%;
+}
+
+.business-star-review-section .rateit {
+	display: inline;
+}
+
+.business-star-review-section .category-num-reviews {
+	display: inline;
+}
+
+.business-right {
+	border: thin solid black;
+}
+
+.carousel-container {
+	background-color: gray;
 }
 
 #business-photos-carousel {
-	height: 300px;
-	width: 400px;
+	height: 400px;
+	width: 500px;
+	margin: 0 auto;
 }
 
 .carousel-photo {
-	height: 300px !important;
-	width: 400px !important;
+	height: 400px !important;
+	width: 500px !important;
 }
 
 .review-business-list {

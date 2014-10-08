@@ -27,6 +27,8 @@ GoAgainV2.Views.BusinessShow = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 		this.attachSubviews();
 
+		$('.rateit').rateit();
+
 		return this;
 	},
 

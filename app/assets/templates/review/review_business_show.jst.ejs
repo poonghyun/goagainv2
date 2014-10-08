@@ -1,3 +1,8 @@
-<div class="review-business">
+<div class="review-business row">
+  <% if(review.get('user').id === review.get('current_user_id')) { %>
+  	<h4 class="text-center">You said</h4>
+  <% } else { %>
+	  <h4 class="text-center"><a href="#/user/<%= review.get('user')['id'] %>"><%= review.get('user')['username'] %></a> says</h4>
+	<% } %>
 
 </div>

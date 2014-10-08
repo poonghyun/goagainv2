@@ -1,43 +1,64 @@
-<div class="business-show-container">
-	<h2><%= business.get('name') %></h2>
+<div class="business-show-container row">
+	<div class="business-left col-xs-4">
+		<h2 class="text-center"><%= business.get('name') %></h2>
 
-	<div class="business-stats">
+		<div class="business-stats">
+			<div class="business-star-review-section">
+				<div class="rateit" data-rateit-value="<%= business.get('average_review') %>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+				<div class="category-num-reviews"><%= business.get('num_reviews') %> reviews</div>
+			</div>
 
+			<% var price = "" %>
+			<% for(var i = 0; i < business.get('price'); i++) { %>
+				<% price += "$" %>
+			<% } %>
+			<p class="text-center"><%= price %>  -  <%= business.get('category') %></p>
+
+		</div>
+
+		<div class="static-map">
+			<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= business.get('x_coord') %>,<%= business.get('y_coord') %>&zoom=15&size=400x400&key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY&markers=color:green%7C<%= business.get('x_coord') %>,<%= business.get('y_coord') %>">
+		</div>
 	</div>
 
-	<div id="business-photos-carousel" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-	    <% business.photos().each(function(photo, index) { %>
-	    	<% if(index === 0) { %>
-	    		<li data-target="#business-photos-carousel" data-slide-to="0" class="active"></li>
-		    <% } else { %>
-		    	<li data-target="#business-photos-carousel" data-slide-to="<%= index %>"></li>
-		  	<% } %>
-	    <% }) %>
-	  </ol>
+	<div class="business-right col-xs-8">
+		<div class="carousel-container">
+			<div id="business-photos-carousel" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+			    <% business.photos().each(function(photo, index) { %>
+			    	<% if(index === 0) { %>
+			    		<li data-target="#business-photos-carousel" data-slide-to="0" class="active"></li>
+				    <% } else { %>
+				    	<li data-target="#business-photos-carousel" data-slide-to="<%= index %>"></li>
+				  	<% } %>
+			    <% }) %>
+			  </ol>
 
-	  <div class="carousel-inner">
-	    <% business.photos().each(function(photo, index) { %>
-		  	<% if(index === 0) { %>
-	    		<div class="item active">
-	      		<img class="carousel-photo" src="<%= photo.get('fp_url') %>">
-	    		</div>
-	    	<% } else { %>
-			    <div class="item">
-			      <img class="carousel-photo" src="<%= photo.get('fp_url') %>">
-			    </div>
-			  <% } %>
-		  <% }) %>
-	  </div>
+			  <div class="carousel-inner">
+			    <% business.photos().each(function(photo, index) { %>
+				  	<% if(index === 0) { %>
+			    		<div class="item active">
+			      		<img class="carousel-photo" src="<%= photo.get('fp_url') %>">
+			    		</div>
+			    	<% } else { %>
+					    <div class="item">
+					      <img class="carousel-photo" src="<%= photo.get('fp_url') %>">
+					    </div>
+					  <% } %>
+				  <% }) %>
+			  </div>
 
-	  <a class="left carousel-control" href="#business-photos-carousel" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left"></span>
-	  </a>
-	  <a class="right carousel-control" href="#business-photos-carousel" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	  </a>
-	</div>
+			  <a class="left carousel-control" href="#business-photos-carousel" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left"></span>
+			  </a>
+			  <a class="right carousel-control" href="#business-photos-carousel" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right"></span>
+			  </a>
+			</div>
+		</div>
 
-	<div class="review-business-list">
+		<div class="review-business-list">
+		</div>
+
 	</div>
 </div>
