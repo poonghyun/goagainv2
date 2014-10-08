@@ -278,10 +278,21 @@ ul {
 }
 
 .business-left {
+	border-right: thin solid lightgray;
+}
+
+.business-left > img {
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+	border: thin solid gray;
+	height: 300px;
+	width: 400px;
+	margin-bottom: 15px;
 }
 
 .static-map {
-	padding-top: 10px;
+	padding-top: 15px;
 	border-top: thin solid lightgray;
 }
 
@@ -297,8 +308,9 @@ ul {
 }
 
 .business-star-review-section {
-	display: inline-block;
-	margin-left: 32%;
+	display: block;
+	width: 150px;
+	margin: 0 auto;
 }
 
 .business-star-review-section .rateit {
@@ -310,29 +322,72 @@ ul {
 }
 
 .business-right {
-	border: thin solid black;
+
 }
 
 .carousel-container {
-	background-color: gray;
+	background-color: black;
+
+	margin-bottom: 10px;
 }
 
 #business-photos-carousel {
-	height: 400px;
-	width: 500px;
+	height: 450px;
+	width: 600px;
 	margin: 0 auto;
 }
 
 .carousel-photo {
-	height: 400px !important;
-	width: 500px !important;
+	height: 450px !important;
+	width: 600px !important;
+}
+
+.review-business-list-container {
+	border-top: thin solid lightgray;
 }
 
 .review-business-list {
-
+	
 }
 
 .review-business {
+	margin-bottom: 10px;
+	border-top: thin solid lightgray;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.business-review-left {
+	border-right: thin solid lightgray;
+	min-height: 150px;
+	margin-bottom: 10px;
+}
+
+.business-review-star-date {
+
+}
+
+.business-review-star-date .rateit {
+
+}
+
+.business-review-star-date .business-review-date {
+
+}
+
+.business-review-content {
+
+}
+
+.business-review-go-again {
+
+}
+
+.business-review-thumbnails {
+
+}
+
+.business-thumbnail-link {
 
 }
 
