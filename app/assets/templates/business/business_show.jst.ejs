@@ -16,7 +16,11 @@
 
 		</div>
 
-		<img src="<%= business.get('avatar_url') %>">
+		<% if(business.get('avatar_url')) { %>
+			<img src="<%= business.get('avatar_url') %>">
+		<% } else { %>
+			<img src="/assets/building-avatar.gif">
+		<% } %>
 
 		<div class="static-map">
 			<img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= business.get('x_coord') %>,<%= business.get('y_coord') %>&zoom=15&size=400x400&key=AIzaSyAa5typTjj43ZpyWYGNg0kNgSHOH5EnVAY&markers=color:green%7C<%= business.get('x_coord') %>,<%= business.get('y_coord') %>">
@@ -60,7 +64,14 @@
 		</div>
 
 		<div class="review-business-list-container">
-			<h3 class="text-right">Reviews</h3>
+
+			<% if(business.get('current_user_reviewed')) { %>
+				<a href="#" class="btn btn-success launch-edit-review">Edit your review</a>
+			<% } else { %>
+				<a href="#" class="btn btn-success launch-new-review">Write a review</a>
+			<% } %>
+
+			<h3>Reviews</h3>
 			
 			<div class="review-business-list">
 			</div>

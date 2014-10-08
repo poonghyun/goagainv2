@@ -38,10 +38,29 @@ GoAgainV2.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 
 	newReviewModal: function () {
+		var view = new GoAgainV2.Views.ReviewNew({
+			model: this.model
+		});
 
+		var modal = new Backbone.BootstrapModal({
+			content: view,
+			animate: true
+		}).open();
+
+		modal.on("ok", function() {
+			modal.preventClose();
+
+			var params = $("form").serializeJSON();
+
+			this.okClicked(params, modal);
+		}.bind(this));
 	},
 
 	editReviewModal: function () {
 		
+	},
+
+	okClicked: function(params, modal) {
+
 	}
 });

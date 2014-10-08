@@ -2,6 +2,8 @@ json.(@business, :id, :name, :category, :created_at, :updated_at, :price, :x_coo
 json.average_review @business.average_review
 json.num_reviews @business.reviews.count
 
+json.current_user_reviewed @business.reviews.map{ |review| review.user.id }.include?(current_user.id) ? true : false
+
 json.reviews @business.reviews.reverse do |review|
 	json.extract! review, :id, :business_id, :content, :stars, :created_at, :updated_at, :go_again
 	json.user review.user

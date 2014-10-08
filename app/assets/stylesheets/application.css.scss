@@ -344,6 +344,11 @@ ul {
 
 .review-business-list-container {
 	border-top: thin solid lightgray;
+	position: relative;
+}
+
+.review-business-list-container h3 {
+	float: right;
 }
 
 .review-business-list {
@@ -392,7 +397,9 @@ ul {
 }
 
 .launch-new-review, .launch-edit-review {
-	
+	position: absolute;
+	top: 5px;
+	left: 20px;
 }
 
 /* user show */
@@ -486,4 +493,10 @@ ul {
 	width: 35%;
 	float: right;
 	border: thin solid black;
+}
+
+/* review forms */
+
+.new-review-form {
+	
 }
