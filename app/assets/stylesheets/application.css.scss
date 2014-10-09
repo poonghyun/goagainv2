@@ -215,6 +215,10 @@ ul {
 	width: 98%;
 }
 
+.more-reviews-link-container {
+	margin-bottom: 20px;
+}
+
 .get-more-reviews {
 
 }
@@ -274,6 +278,7 @@ ul {
 	width: 95%;
 	min-width: 1000px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 }
 
 .business-left {
@@ -409,6 +414,7 @@ ul {
 	min-width: 700px;
 	padding-top: 30px;
 	min-width: 1000px;
+	margin-bottom: 20px;
 }
 
 .user-profile-area {
@@ -550,4 +556,17 @@ ul {
 
 .edit-review-form {
 
+}
+
+/* footer */
+
+.footer {
+	height: 50px;
+}
+
+.footer a {
+	margin-top: 15px;
+	margin-right: 20px;
+	color: white;
+	float: right;
 }

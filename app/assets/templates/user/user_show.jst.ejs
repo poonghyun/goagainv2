@@ -19,7 +19,9 @@
 		<div class="about-me-container">
 			<h4>About Me</h4>
 			<% if(user.get('about_me')) { %>
-				<a href="#" class="edit-about-me-link">Edit</a>
+				<% if(user.id === user.get('current_user_id')) { %>
+					<a href="#" class="edit-about-me-link">Edit</a>
+				<% } %>
 				<p class='about-me-field'><%= user.get('about_me') %></p>
 			<% } else { %>
 				<% if(user.id === user.get('current_user_id')) { %>

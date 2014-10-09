@@ -1,12 +1,10 @@
-user review edit button
-
 photos
-
-footer
 
 seeds
 
 ---
+
+user review edit button
 
 business creation
 
