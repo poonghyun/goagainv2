@@ -482,29 +482,64 @@ ul {
 	margin-top: 30px;
 	margin-right: 5%;
 	margin-left: 5%;
-	min-width: 700px;
-	height: 600px;
-	border: thin solid black;
+	min-width: 1000px;
+	height: 630px;
 	position: relative;
 }
 
 .map-help {
 	position: absolute;
-	top: 435px;
+	top: 540px;
 	left: 15px;
 }
 
 #map {
-	height: 500px;
-	width: 63%;
+	height: 600px;
+
+	/* Firefox */
+	width: -moz-calc(100% - 420px);
+	/* WebKit */
+	width: -webkit-calc(100% - 420px);
+
+	width: calc(100% - 420px);
+
 	float: left;
 }
 
 .map-business-preview {
-	height: 500px;
-	width: 35%;
+	height: 600px;
+	width: 400px;
 	float: right;
-	border: thin solid black;
+	position: relative;
+}
+
+.map-business-preview img {
+	width: 100%;
+	height: 350px;
+	border: thin solid gray;
+}
+
+.preview-review-section {
+	width: 155px;
+	margin: 0 auto;
+}
+
+.preview-review-section .category-num-reviews {
+	display: inline;
+}
+
+.preview-review-section .rateit {
+	display: inline;
+}
+
+.preview-price {
+	text-align: center;
+	border-bottom: thin solid lightgray;
+	padding-bottom: 5px;
+}
+
+.last-review-section {
+
 }
 
 /* review forms */

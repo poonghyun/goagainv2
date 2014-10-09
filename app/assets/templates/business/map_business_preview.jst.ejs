@@ -1,1 +1,35 @@
-<%= business.get('name') %>
+<a href="#/business/<%= business.id %>"><span class="link-span"></span></a>
+
+<% if(business.get('avatar_url')) { %>
+	<img src="<%= business.get('avatar_url') %>">
+<% } else { %>
+	<img src="/assets/building-avatar.gif">
+<% } %>
+
+<h4 class="text-center"><%= business.get('name') %></h4>
+
+<div class="preview-review-section">
+	<div class="rateit" data-rateit-value="<%= business.get('average_review') %>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+	<div class="category-num-reviews"><%= business.get('num_reviews') %> reviews</div>
+</div>
+
+<% var price = "" %>
+<% for(var i = 0; i < business.get('price'); i++) { %>
+	<% price += "$" %>
+<% } %>
+<p class="preview-price"><%= price %>  -  <%= business.get('category') %></p>
+
+<% if(business.get('last_review')) { %>
+	<div class="last-review-section">
+		<p class="text-center">Last reviewed by <%= business.get('last_review_username') %></p>
+		
+		<div class="business-review-star-date">
+			<div class="rateit" data-rateit-value="<%= business.get('last_review')['stars'] %>" data-rateit-ispreset="true" data-rateit-readonly="true"></div>
+			<div class="business-review-date"><%= (new Date(business.get('last_review')['updated_at'])).toDateString() %></div>
+		</div>
+
+		<p class="business-review-content">"<%= business.get('last_review')['content'] %>"</p>
+
+		<p class="business-review-go-again">Go again? <b><%= business.get('last_review')['go_again'] ? "Yes" : "No" %></b></p>
+	</div>
+<% } %>

@@ -106,6 +106,8 @@ GoAgainV2.Views.MapView = Backbone.View.extend({
 	  $(".map-business-preview").html(new GoAgainV2.Views.MapBusinessPreview({
 	  	model: this.model
 	  }).render().$el);
+
+	  $('.rateit').rateit();
 	},
 
 	findBusinesses: function(bounds, center) {
