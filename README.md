@@ -1,9 +1,5 @@
 user reviews
-user photo gallery
 
-business show
-
-review creation
 photos
 
 map business preview

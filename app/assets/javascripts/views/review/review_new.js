@@ -8,8 +8,6 @@ GoAgainV2.Views.ReviewNew = Backbone.View.extend({
 
 		this.$el.html(renderedContent);
 
-		$('.rateit').rateit();
-
 		return this;
 	}
 });

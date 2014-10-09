@@ -37,15 +37,18 @@ GoAgainV2.Views.BusinessShow = Backbone.CompositeView.extend({
 		"click .launch-edit-review": "editReviewModal"
 	},
 
-	newReviewModal: function () {
+	newReviewModal: function (event) {
+		event.preventDefault();
+
 		var view = new GoAgainV2.Views.ReviewNew({
 			model: this.model
 		});
 
 		var modal = new Backbone.BootstrapModal({
-			content: view,
-			animate: true
+			content: view
 		}).open();
+
+		$('.rateit').rateit();
 
 		modal.on("ok", function() {
 			modal.preventClose();
@@ -56,11 +59,59 @@ GoAgainV2.Views.BusinessShow = Backbone.CompositeView.extend({
 		}.bind(this));
 	},
 
-	editReviewModal: function () {
-		
+	editReviewModal: function (event) {
+		event.preventDefault();
+
+		var bView = this;
+		var review = this.collection.get(bView.model.get('current_user_review').id);
+
+		var view = new GoAgainV2.Views.ReviewEdit({
+			model: review,
+			business_name: this.model.get('name')
+		});
+
+		var modal = new Backbone.BootstrapModal({
+			content: view
+		}).open();
+
+		$('.rateit').rateit();
+
+		modal.on("ok", function() {
+			modal.preventClose();
+
+			var params = $("form").serializeJSON();
+
+			this.okClicked(params, modal);
+		}.bind(this));
 	},
 
 	okClicked: function(params, modal) {
+		var view = this;
+		var review = new GoAgainV2.Models.Review(params["review"]);
 
+		if(!params["review"].go_again) {
+			review.set({ go_again: false })
+		}
+
+		var starValue = $('#review-stars > div').attr('aria-valuenow');
+		review.set({ stars: starValue });
+
+		review.save({}, {
+			success: function (resp) {
+				modal.close();
+
+				view.model.fetch();
+			},
+			error: function(model, resp) {
+				var errorJSON = resp.responseJSON;
+				$('.form-group').removeClass('has-error');
+				if(errorJSON.content) {
+					$('#review-content').parent().addClass('has-error');
+				}
+				if(errorJSON.stars) {
+					$('#review-stars').parent().addClass('has-error');
+				}
+			}
+		});
 	}
 });
