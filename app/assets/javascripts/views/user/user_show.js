@@ -27,6 +27,8 @@ GoAgainV2.Views.UserShow = Backbone.CompositeView.extend({
 		this.$el.html(renderedContent);
 		this.attachSubviews();
 
+		$('.rateit').rateit();
+
 		return this;
 	},
 

@@ -4,6 +4,8 @@ photos
 
 map business preview
 
+footer
+
 ---
 
 seeds

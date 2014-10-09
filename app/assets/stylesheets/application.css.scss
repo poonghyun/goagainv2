@@ -96,7 +96,6 @@ ul {
 }
 
 .categories {
-	border: thin solid black;
 	width: 95%;
 	margin: 0 auto;
 }
@@ -408,10 +407,12 @@ ul {
 	width: 95%;
 	margin: 0 auto;
 	min-width: 700px;
+	padding-top: 30px;
+	min-width: 1000px;
 }
 
 .user-profile-area {
-	border: thin solid black;
+	border-right: thin solid lightgray;
 }
 
 .user-profile-area h2 {
@@ -455,12 +456,23 @@ ul {
 	padding-top: 10px;
 }
 
-.review-user-list {
+.user-right-container {
 
 }
 
+.user-right-container h3 {
+	float:right;
+}
+
+.review-user-list {
+	margin-top: 50px;
+}
+
 .review-user {
-	
+	margin-bottom: 10px;
+	border-top: thin solid lightgray;
+	width: 95%;
+	margin: 0 auto;
 }
 
 /* explore */
@@ -502,5 +514,5 @@ ul {
 }
 
 .edit-review-form {
-	
+
 }
