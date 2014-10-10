@@ -85,7 +85,7 @@ ul {
 /* splash */
 
 .splash-header {
-	background: url("/assets/sanfran.jpeg") no-repeat center center fixed;
+	background: url("/assets/hero_contrast.jpeg") no-repeat center center fixed;
 	height: 550px;
 }
 
@@ -126,6 +126,15 @@ ul {
 	transition: opacity 2s;
 	border: thin solid lightgray;
 	position: relative;
+}
+
+.category-thumbnail .link-span {
+	opacity: 0.1;
+	background-color: black;
+}
+
+.category-thumbnail .link-span:hover {
+	opacity: 0;
 }
 
 .category-thumbnail img {
@@ -578,6 +587,7 @@ ul {
 
 .footer {
 	height: 50px;
+	background-color: gray;
 }
 
 .footer a {
