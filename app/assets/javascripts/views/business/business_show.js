@@ -100,6 +100,17 @@ GoAgainV2.Views.BusinessShow = Backbone.CompositeView.extend({
 			success: function (resp) {
 				modal.close();
 
+				if(params["review"]["photos"]) {
+					_(params["review"]["photos"]["urls"]).each(function(url){
+						var photo = new GoAgainV2.Models.Photo({
+							review_id: resp.id,
+							fp_url: url
+						})
+
+						photo.save();
+					});
+				}
+
 				view.model.fetch();
 			},
 			error: function(model, resp) {

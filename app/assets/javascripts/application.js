@@ -22,6 +22,8 @@
 //= require typeahead.bundle
 //= require handlebars-1.0.rc.1.min
 //= require jquery.rateit
+//= require jquery.inview
+//= require spin
 //= require bootstrap-lightbox
 //= require go_again_v2
 //= require_tree ../templates

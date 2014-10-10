@@ -217,6 +217,7 @@ ul {
 
 .more-reviews-link-container {
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .get-more-reviews {
@@ -556,6 +557,21 @@ ul {
 
 .edit-review-form {
 
+}
+
+.add-pictures {
+
+}
+
+.form-photos {
+
+}
+
+.form-thumbnail {
+	height: 120px;
+	width: 120px;
+	border: thin solid gray;
+	margin-right: 5px;
 }
 
 /* footer */
