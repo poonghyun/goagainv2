@@ -9,7 +9,7 @@
 			<div class="business-review-date"><%= (new Date(review.get('updated_at'))).toDateString() %></div>
 		</div>
 
-		<p class="business-review-content">"<%= review.get('content') %>"</p>
+		<p class="business-review-content">"<%= review.escape('content') %>"</p>
 
 		<p class="business-review-go-again">Go again? <b><%= review.get('go_again') ? "Yes" : "No" %></b></p>
 
