@@ -262,10 +262,6 @@ ul {
     background-color: black;
 }
 
-.tt-dropdown-menu div {
-	background-color: black;
-}
-
 .tt-dropdown-menu a {
 	color: white;
 }
@@ -277,6 +273,10 @@ ul {
 
 .tt-suggestion p {
     margin: 0;
+}
+
+.tt-cursor {
+	background-color: orange;
 }
 
 /* business show */
