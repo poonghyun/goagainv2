@@ -92,7 +92,9 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 		event.preventDefault();
 
 		$('.category-link').css("font-weight", "normal");
+		$('.category-link-container').removeClass("selected-category");
 		$(event.currentTarget).css("font-weight", "bold");
+		$(event.currentTarget).parent().addClass("selected-category");
 
 		var category = $(event.currentTarget).attr('href');
 
