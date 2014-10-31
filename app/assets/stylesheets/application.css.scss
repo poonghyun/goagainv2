@@ -36,6 +36,20 @@ ul {
   margin: 0 auto;
 }
 
+.row-centered {
+  text-align:center;
+}
+
+.col-cat-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+  vertical-align: top;
+}
+
 /* sign in pages */
 
 .image-background-container {

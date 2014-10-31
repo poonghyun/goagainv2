@@ -6,17 +6,18 @@
   <% var categories = ["Bars & Nightlife", "Restaurants", "Coffee & Tea", "Arts & Entertainment", "Shopping", "Hotels & Travel", "Beauty & Spas", "Bakeries", "Food Carts", "Gyms", "Health & Medical", "Home Services"] %>
 
   <div class="cat-nav-outer">
-  <div class="category-nav">
-    <% categories.forEach(function(category) { %>
-      <div class="category-link-container">
-        <a class="category-link" href="<%= category.replace(/ /g,'') %>"><%= category %></a>
-      </div>
-    <% }); %>
-  </div>
+    <div class="category-nav">
+      <% categories.forEach(function(category) { %>
+        <div class="category-link-container">
+          <a class="category-link" href="<%= category.replace(/ /g,'') %>"><%= category %></a>
+        </div>
+      <% }); %>
+    </div>
   </div>
 
-  <div class="category-results row"></div>
-
+  <div class="container">
+  <div class="category-results row row-centered"></div>
+  </div>
 </div>
 
 <div class="recent-reviews">

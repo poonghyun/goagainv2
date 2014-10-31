@@ -1,5 +1,5 @@
 <% businesses.each(function(business) { %>
-	<div class="category-thumbnail col-xs-3" style="opacity:0">
+	<div class="category-thumbnail col-xs-3 col-cat-centered" style="opacity:0">
 		<a href="#/business/<%= business.id %>"><span class="link-span"></span></a>
 
 		<% if(business.get('avatar_url')) { %>
