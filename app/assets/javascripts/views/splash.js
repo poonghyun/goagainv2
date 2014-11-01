@@ -5,7 +5,7 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 		this.businesses = options.businesses;
 		this.recentReviews = options.recentReviews;
 
-		this.listenTo(this.recentReviews, "sync", this.render);
+		// this.listenTo(this.recentReviews, "sync", this.render);
 		this.listenTo(this.recentReviews, "add", this.addReview.bind(this));
 
 		this.recentReviews.each(this.addReview.bind(this));
@@ -75,11 +75,13 @@ GoAgainV2.Views.Splash = Backbone.CompositeView.extend({
 
 	      _(data).each(function(review){
 	      	var reviewModel = new GoAgainV2.Models.Review(review);
-	      	reviewModel.fetch();
+	      	reviewModel.fetch({
+	      		success: function() {
+	      			setTimeout(function(){$('.rateit').rateit()}, 10);
+	      		}
+	      	});
 	      	view.recentReviews.add(reviewModel);
 	      });
-
-	      $('.rateit').rateit();
 	    }
 	  };
 

@@ -18,7 +18,11 @@ GoAgainV2.Routers.Router = Backbone.Router.extend({
 		});
 
 		GoAgainV2.businesses.fetch();
-		GoAgainV2.reviews.fetch();
+		GoAgainV2.reviews.fetch({
+			success: function () {
+				view.render();
+			}
+		});
 
 		this._swapView(view);
 	},
